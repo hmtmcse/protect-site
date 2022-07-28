@@ -1,7 +1,7 @@
 {
   "include": ["src", "types"],
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "target": "esnext",
     "moduleResolution": "node",
     "jsx": "preserve",
@@ -16,7 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
     /* more strict checking for errors that per-file transpilers like `esbuild` would crash */
-    "isolatedModules": false,
+    "isolatedModules": true,
     /* noEmit - We only use TypeScript for type checking. */
     "noEmit": true,
     /* Additional Options */
