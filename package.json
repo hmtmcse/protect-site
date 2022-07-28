@@ -1,0 +1,22 @@
+{
+  "name": "protect-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmtmcse/protect-site.git"
+  },
+  "author": "Touhid Mia",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/hmtmcse/protect-site/issues"
+  },
+  "homepage": "https://github.com/hmtmcse/protect-site#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
