@@ -1,3 +1,5 @@
-.idea
-package-lock.json
+.snowpack
+build
 node_modules
+.idea
+*.lock
