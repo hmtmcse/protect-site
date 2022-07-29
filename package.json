@@ -3,7 +3,9 @@
     "start": "snowpack dev",
     "build": "snowpack build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "hotkeys-js": "^3.9.4"
+  },
   "devDependencies": {
     "@snowpack/plugin-typescript": "^1.2.1",
     "@types/canvas-confetti": "^1.0.0",
