@@ -1,4 +1,11 @@
 import hotkeys from "hotkeys-js";
+import devTools from "devtools-detect";
+
+declare global {
+    interface Window {
+        ps: any;
+    }
+}
 
 export default class ProtectSite {
 
@@ -27,7 +34,7 @@ export default class ProtectSite {
 
     disableHotkeys() {
         let keys = ""
-        keys += "f12, f11,"
+        keys += "f12, f11"
         keys += "ctrl+shift+i, ctrl+shift+j, shift+f5, shift+f6, shift+f9, shift+f12,"
         keys += "command+option+j, command+option+i, command+shift+c, command+option+c, command+option+k, command+option+z, command+option+e,"
         keys += "ctrl, ctrl+s, ctrl+a, ctrl+c, ctrl+x, ctrl+v, ctrl+u, ctrl+p"
@@ -61,12 +68,33 @@ export default class ProtectSite {
         css.innerText = cssStyle;
     }
 
+    showHideBody(isShow: boolean) {
+        if (isShow) {
+            window.ps = document.body.innerHTML;
+            document.body.innerHTML = '';
+        } else {
+            if (window.ps) {
+                document.body.innerHTML = window.ps;
+                window.ps = undefined;
+            }
+        }
+    }
+
+    hideContentOnDevtools() {
+        this.showHideBody(devTools.isOpen)
+        window.addEventListener("devtoolschange", (event: any) => {
+            console.log(event.detail.isOpen)
+            this.showHideBody(event.detail.isOpen)
+        })
+    }
+
 
     init() {
         this.disableHotkeys()
         this.disableSetOfKeys()
         this.disableContextMenu()
         this.disableSelection()
+        this.hideContentOnDevtools()
     }
 }
 

@@ -4,6 +4,7 @@
     "build": "snowpack build"
   },
   "dependencies": {
+    "devtools-detect": "^4.0.0",
     "hotkeys-js": "^3.9.4"
   },
   "devDependencies": {
