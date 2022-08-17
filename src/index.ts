@@ -83,7 +83,6 @@ export default class ProtectSite {
     hideContentOnDevtools() {
         this.showHideBody(devTools.isOpen)
         window.addEventListener("devtoolschange", (event: any) => {
-            console.log(event.detail.isOpen)
             this.showHideBody(event.detail.isOpen)
         })
     }
